@@ -24,7 +24,7 @@ class esb:
         pilot_found = requests.get(self.esb_url + '/pilot/' + pilot_name, allow_redirects=False)
         location = pilot_found.headers.get('Location')
 
-        if (location is not None and '/password/' in location:
+        if (location is not None and '/password/' in locationi):
             await self.bot.say("Pilot Found! But looks like it has a password\n" + self.esb_url + '/pilot/{}'.format(pilot_name))
         elif (location is not None and location == self.esb_url): 
             await self.bot.say("Pilot wasn't found on EveSkillboard")
