@@ -11,9 +11,7 @@ class esb:
     @commands.group(pass_context=True)
     async def esb(self, ctx):
         """Eveskillboard related commands"""
-        if ctx.invoked_subcommand is None:
-            await self.bot.say("Unknown command passed to esb")
-
+        
     @esb.command()
     async def pilot(self, *, pilot_name: str):
         """Look up a pilots skillboard"""
