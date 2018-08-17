@@ -1,0 +1,10 @@
+{
+    "AUTHOR" : "Jake Zufelt",
+    "INSTALL_MSG" : "Thanks for installing eveCog status cog! You can quickly see basic stats about Eve Online",
+    "NAME" : "evestatus",
+    "SHORT" : "Return in game time, player count, server_version, vip status, and start_time ",
+    "DESCRIPTION" : "Quick Cog to query the state of the Eve Online game server",
+    "TAGS" : ["eve online"],
+    "REQUIREMENTS" : ["requests"],
+    "HIDDEN" : false
+}
