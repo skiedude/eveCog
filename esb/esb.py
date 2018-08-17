@@ -32,6 +32,11 @@ class esb:
             await self.bot.say("Pilot Found!\n" + self.esb_url + '/pilot/' + pilot_name.replace(" ", "_"))
         else:
             await self.bot.say("Not sure what happened, but it wasn't good")
+
+    @esb.command()
+    async def transfer():
+        """Provide information on how to transfer a character"""
+        await.self.bot.say("**How do transfers work?**\nhttps://eveskillboard.com/guides/transfer")
                 
 def setup(bot):
    	bot.add_cog(esb(bot))
