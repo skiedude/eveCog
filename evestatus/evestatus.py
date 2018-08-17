@@ -10,14 +10,14 @@ class evestatus:
         self.bot = bot
 
     @commands.command()
-    async def evestatus(self):
-        """Returns the Current time in EVE Online"""
+    async def evestats(self):
+        """Returns the Current time, players online, start_time, vip status in EVE Online"""
 
-        utc_time = datetime.utc_time()
+        utc_time = datetime.utc_time().strftime('%I:%M:%S %p')
         try:
         	current_status = requests.get(eve_url + '/v1/status/')
         	current_status.json()
-        await self.bot.say(utc_time)
+        await self.bot.say("Current Time: " + utc_time + "\n")
 
 def setup(bot):
    	bot.add_cog(evestatus(bot))
