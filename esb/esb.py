@@ -23,12 +23,12 @@ class esb:
 
         pilot_found = requests.get(self.esb_url + '/pilot/' + pilot_name, allow_redirects=False)
 
-        if ( hasattr(pilot_found.headers, 'Location') and "/password/" in pilot_found.headers['Location']):
-            await self.bot.say("Pilot Found! But looks like it has a password\n" + self.esb_url + '{}'.format(pilot_name))
-        elif ( hasattr(pilot_found.headers, 'Location') and pilot_found.headers['Location'] == self.esb_url): 
+        if '/password/' in pilot_found.headers.get('Location'):
+            await self.bot.say("Pilot Found! But looks like it has a password\n" + self.esb_url + '/pilot/{}'.format(pilot_name))
+        elif pilot_found.headers.get('Location') == self.esb_url: 
             await self.bot.say("Pilot wasn't found on EveSkillboard")
-        elif (not hasattr(pilot_found.headers, 'Location') and pilot_found.status_code == 200):
-            await self.bot.say("Pilot Found!\n" + self.esb_url + '{}'.format(pilot_name))
+        elif (pilot_found.headers.get('Location') is None and pilot_found.status_code == 200):
+            await self.bot.say("Pilot Found!\n" + self.esb_url + '/pilot/{}'.format(pilot_name))
         else:
             await self.bot.say("Not sure what happened, but it wasn't good")
                 
