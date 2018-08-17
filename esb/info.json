@@ -1,0 +1,10 @@
+{
+    "AUTHOR" : "Jake Z",
+    "INSTALL_MSG" : "Thanks for installing eveCog ESB cog! You can use this to search for pilots on eveskillboard.com",
+    "NAME" : "esb",
+    "SHORT" : "Search pilots on eveskillboard.com, with the `[p]esb pilot name",
+    "DESCRIPTION" : "Search pilots on eveskillboard.com, with the `[p]esb pilot name",
+    "TAGS" : ["eve online", "eveskillboard", "eveboard"],
+    "REQUIREMENTS" : ["requests"],
+    "HIDDEN" : false
+}

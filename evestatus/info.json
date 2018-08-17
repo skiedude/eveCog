@@ -1,5 +1,5 @@
 {
-    "AUTHOR" : "Jake Zufelt",
+    "AUTHOR" : "Jake Z",
     "INSTALL_MSG" : "Thanks for installing eveCog status cog! You can quickly see basic stats about Eve Online",
     "NAME" : "evestatus",
     "SHORT" : "Return in game time, player count, server_version, vip status, and start_time ",
