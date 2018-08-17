@@ -6,7 +6,7 @@ from __main__ import send_cmd_help
 
 
 class esb:
-    esb_url = "https://eveskillboard.com/pilot/"
+    esb_url = "https://eveskillboard.com"
 
     def __init__(self, bot):
         self.bot = bot
@@ -21,11 +21,16 @@ class esb:
     async def pilot(self, *, pilot_name: str):
         """Look up a pilots skillboard"""
 
-        pilot_found = requests.get(self.esb_url + pilot_name)
-        if pilot_found.status_code == 200:
-            await self.bot.say("Pilot Found! \n" + self.esb_url + pilot_name)
+        pilot_found = requests.get(self.esb_url + '/pilot/' + pilot_name, allow_redirects=False)
+
+        if ( hasattr(pilot_found.headers, 'Location') and "/password/" in pilot_found.headers['Location']):
+            await self.bot.say("Pilot Found! But looks like it has a password\n" + self.esb_url + '{}'.format(pilot_name))
+        elif ( hasattr(pilot_found.headers, 'Location') and pilot_found.headers['Location'] == self.esb_url): 
+            await self.bot.say("Pilot wasn't found on EveSkillboard")
+        elif (not hasattr(pilot_found.headers, 'Location') and pilot_found.status_code == 200):
+            await self.bot.say("Pilot Found!\n" + self.esb_url + '{}'.format(pilot_name))
         else:
-            await self.bot.say("Pilot wasn't found on Eveskillboard")
-    
+            await self.bot.say("Not sure what happened, but it wasn't good")
+                
 def setup(bot):
    	bot.add_cog(esb(bot))
