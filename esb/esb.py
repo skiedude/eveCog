@@ -2,6 +2,9 @@ import discord
 import requests
 from discord.ext import commands
 
+from __main__ import send_cmd_help
+
+
 class esb:
     esb_url = "https://eveskillboard.com/pilot/"
 
@@ -13,7 +16,7 @@ class esb:
         """Eveskillboard related commands"""
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
-            
+
     @esb.command()
     async def pilot(self, *, pilot_name: str):
         """Look up a pilots skillboard"""
