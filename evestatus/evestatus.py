@@ -16,7 +16,7 @@ class evestatus:
         utc_time = datetime.utcnow().strftime('%I:%M:%S %p')
         current_status = requests.get(self.eve_url + '/v1/status/')
         rsp = current_status.json()
-        await self.bot.say("Current Time: " + utc_time + "\n Player Count: " + rsp['players'])
+        await self.bot.say("Current Time: " + utc_time + "\n Player Count: " + str(rsp['players']))
 
 def setup(bot):
    	bot.add_cog(evestatus(bot))
