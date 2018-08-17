@@ -34,7 +34,7 @@ class esb:
             await self.bot.say("Not sure what happened, but it wasn't good")
 
     @esb.command()
-    async def transfer():
+    async def transfer(self):
         """Provide information on how to transfer a character"""
         await self.bot.say("**How do transfers work?**\nhttps://eveskillboard.com/guides/transfer")
                 
