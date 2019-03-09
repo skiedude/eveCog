@@ -39,7 +39,7 @@ class esb:
         await self.bot.say("**How do transfers work?**\nhttps://eveskillboard.com/guides/transfer")
 
     @esb.command()
-    async def bot(self):
+    async def evebot(self):
         """Provide information on how to get EveBot"""
         await self.bot.say("**How do I get Evebot on my discord?**\nhttps://eveskillboard.com/guides/bot")
                
