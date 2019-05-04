@@ -1,0 +1,10 @@
+{
+    "AUTHOR" : "Jake Z",
+    "INSTALL_MSG" : "Thanks for installing eveCog status cog! You can quickly see basic stats about Eve Online",
+    "NAME" : "evedead",
+    "SHORT" : "Is eve really dying?",
+    "DESCRIPTION" : "Sarcastic response to eve dying",
+    "TAGS" : ["eve online"],
+    "REQUIREMENTS" : ["requests"],
+    "HIDDEN" : false
+}
